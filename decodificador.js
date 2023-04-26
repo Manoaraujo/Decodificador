@@ -1,13 +1,4 @@
 
-
-// let letrasSubstituir = /a|e|i|o|u/gi
-// let cifras = /'ai'|'enter'|'imes'|'ober'|'ufat'/
-// const x = ['a', 'e', 'i', 'o', 'u']
-// const y = ['ai', 'enter', 'imes', 'ober', 'ufat']
-
-let texto = document.getElementById('texto')
-
-
 let botaoCodificar = document.getElementById('botaoCode')
 let botaoDecodificar = document.getElementById('botaoDecode')
 
@@ -32,8 +23,8 @@ function decodificar(codificado) {
 }
 
 function testecode() {
-
-    code("germano");
+    texto = document.getElementById("texto")
+    code(texto.value);
 }
 
 function code(a) {
@@ -51,8 +42,6 @@ function decode() {
 
 let codificado;
 let decodificado;
-// let original = texto
-
 
 botaoCodificar.onclick = testecode;
 botaoDecodificar.onclick = decode;
