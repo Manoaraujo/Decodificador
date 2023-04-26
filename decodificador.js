@@ -5,7 +5,11 @@
 // const x = ['a', 'e', 'i', 'o', 'u']
 // const y = ['ai', 'enter', 'imes', 'ober', 'ufat']
 
+let texto = document.getElementById('texto')
 
+
+let botaoCodificar = document.getElementById('botaoCode')
+let botaoDecodificar = document.getElementById('botaoDecode')
 
 function codificar(codigo) {
 
@@ -27,16 +31,29 @@ function decodificar(codificado) {
 
 }
 
+function testecode() {
+
+    code("germano");
+}
+
+function code(a) {
+
+    codificado = codificar(a)
+    texto.innerHTML = codificado
+
+}
+
+function decode() {
+
+    decodificado = decodificar(codificado)
+    texto.innerHTML = decodificado
+}
+
 let codificado;
 let decodificado;
-let original = "germano"
+// let original = texto
 
-codificado = codificar(original)
-console.log(codificado);
 
-decodificar(codificado);
-console.log(decodificado);
+botaoCodificar.onclick = testecode;
+botaoDecodificar.onclick = decode;
 
-// codificar("germano");
-// let mensagemSecreta = codigo.replace(letrasSubstituir, "x")
-// console.log(mensagemSecreta)
