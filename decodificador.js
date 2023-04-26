@@ -5,8 +5,7 @@
 // const x = ['a', 'e', 'i', 'o', 'u']
 // const y = ['ai', 'enter', 'imes', 'ober', 'ufat']
 
-let letraU;
-let cifraU
+
 
 function codificar(codigo) {
 
@@ -14,7 +13,7 @@ function codificar(codigo) {
     let letraI = letraE.replace(/i/gi, "imes")
     let letraA = letraI.replace(/a/gi, "ai")
     let letraO = letraA.replace(/o/gi, "ober")
-    return letraU = letraO.replace(/u/gi, "ufat")
+    return codificado = letraO.replace(/u/gi, "ufat")
 
 }
 
@@ -24,16 +23,19 @@ function decodificar(codificado) {
     let cifraI = cifraE.replace(/imes/gi, "i")
     let cifraA = cifraI.replace(/ai/gi, "a")
     let cifraO = cifraA.replace(/ober/gi, "o")
-    return cifraU = cifraO.replace(/ufat/gi, "u")
+    return decodificado = cifraO.replace(/ufat/gi, "u")
 
 }
 
+let codificado;
+let decodificado;
+let original = "germano"
 
-letraU = codificar("germano")
-console.log(letraU);
+codificado = codificar(original)
+console.log(codificado);
 
-decodificar(letraU);
-console.log(cifraU);
+decodificar(codificado);
+console.log(decodificado);
 
 // codificar("germano");
 // let mensagemSecreta = codigo.replace(letrasSubstituir, "x")
