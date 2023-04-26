@@ -22,27 +22,34 @@ function decodificar(codificado) {
 
 }
 
-function testecode() {
+function ativaCode() {
     texto = document.getElementById("texto")
     code(texto.value);
+}
+
+function ativaDecode() {
+    textoCodificado = document.getElementById("textoCodificado")
+    decode(textoCodificado.value);
 }
 
 function code(a) {
 
     codificado = codificar(a)
-    texto.innerHTML = codificado
+    document.getElementById("textoCodificado").value = codificado
+    document.getElementById("texto").value = ""
 
 }
 
-function decode() {
+function decode(b) {
 
-    decodificado = decodificar(codificado)
-    texto.innerHTML = decodificado
+    decodificado = decodificar(b)
+    document.getElementById("texto").value = decodificado
+    document.getElementById("textoCodificado").value = ""
 }
 
 let codificado;
 let decodificado;
 
-botaoCodificar.onclick = testecode;
-botaoDecodificar.onclick = decode;
+botaoCodificar.onclick = ativaCode;
+botaoDecodificar.onclick = ativaDecode;
 
