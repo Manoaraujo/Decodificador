@@ -26,39 +26,12 @@ function ativaCode() {
 
     textoDigitado = document.getElementById("texto");
 
-    texto.addEventListener("keypress", function (e) {
-        var keyCode = (e.keyCode ? e.keyCode : e.which);
-
-        if (keyCode > 47 && keyCode < 58) {
-            e.preventDefault();
-
-        } else if (keyCode > 191 && keyCode <= 255) {
-            e.preventDefault();
-        } else if (keyCode > 64 && keyCode <= 91) {
-            e.preventDefault();
-        }
-
-    });
-
     code(textoDigitado.value);
 }
 
 function ativaDecode() {
+
     textoCoded = document.getElementById("textoCodificado");
-
-    textoCodificado.addEventListener("keypress", function (e) {
-        var keyCode = (e.keyCode ? e.keyCode : e.which);
-
-        if (keyCode > 47 && keyCode < 58) {
-            e.preventDefault();
-
-        } else if (keyCode > 191 && keyCode <= 255) {
-            e.preventDefault();
-        } else if (keyCode > 64 && keyCode <= 91) {
-            e.preventDefault();
-        }
-
-    });
 
     decode(textoCoded.value);
 }
@@ -66,17 +39,75 @@ function ativaDecode() {
 function code(a) {
 
     codificado = codificar(a)
+    document.getElementById("textoCodificado").style.visibility = "initial"
+    document.getElementById("botaoDecode").style.visibility = "initial"
+
     document.getElementById("textoCodificado").value = codificado
     document.getElementById("texto").value = ""
+
+    document.getElementById("texto").style.visibility = "hidden" // esconder textArea
+    // document.getElementById("botaoCode").style.visibility = "hidden" 
 
 }
 
 function decode(b) {
 
     decodificado = decodificar(b)
+    document.getElementById("texto").style.visibility = "initial"
+    document.getElementById("botaoCode").style.visibility = "initial"
+
     document.getElementById("texto").value = decodificado
     document.getElementById("textoCodificado").value = ""
+
+    document.getElementById("textoCodificado").style.visibility = "hidden" // esconder textArea
+    // document.getElementById("botaoDecode").style.visibility = "hidden" // esconder botão
 }
+
+
+// cogido para permitir somente letras minusculas
+
+textoDigitado = document.getElementById("texto");
+
+texto.addEventListener("keypress", function (e) {
+
+    var keyCode = (e.keyCode ? e.keyCode : e.which);
+
+    if (keyCode > 47 && keyCode < 58) {   //numeros
+        e.preventDefault();
+
+    } else if (keyCode > 191 && keyCode <= 255) { //letras acentudas
+        e.preventDefault();
+
+    } else if (keyCode > 64 && keyCode <= 91) { // letras maiusculas
+        e.preventDefault();
+    }
+
+    console.log(keyCode)
+});
+
+textoCoded = document.getElementById("textoCodificado");
+
+textoCodificado.addEventListener("keypress", function (e) {
+
+    var keyCode = (e.keyCode ? e.keyCode : e.which);
+
+    if (keyCode > 47 && keyCode < 58) {   //numeros
+        e.preventDefault();
+
+    } else if (keyCode > 191 && keyCode <= 255) { //letras acentudas
+        e.preventDefault();
+
+    } else if (keyCode > 64 && keyCode <= 91) { // letras maiusculas
+        e.preventDefault();
+    }
+
+});
+
+//--------------------------------------------------------------
+
+// document.getElementById("botaoDecode").style.visibility = "hidden"
+// document.getElementById("textoCodificado").style.visibility = "hidden"
+
 
 let codificado;
 let decodificado;
