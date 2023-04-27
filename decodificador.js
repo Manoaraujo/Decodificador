@@ -23,13 +23,44 @@ function decodificar(codificado) {
 }
 
 function ativaCode() {
-    texto = document.getElementById("texto")
-    code(texto.value);
+
+    textoDigitado = document.getElementById("texto");
+
+    texto.addEventListener("keypress", function (e) {
+        var keyCode = (e.keyCode ? e.keyCode : e.which);
+
+        if (keyCode > 47 && keyCode < 58) {
+            e.preventDefault();
+
+        } else if (keyCode > 191 && keyCode <= 255) {
+            e.preventDefault();
+        } else if (keyCode > 64 && keyCode <= 91) {
+            e.preventDefault();
+        }
+
+    });
+
+    code(textoDigitado.value);
 }
 
 function ativaDecode() {
-    textoCodificado = document.getElementById("textoCodificado")
-    decode(textoCodificado.value);
+    textoCoded = document.getElementById("textoCodificado");
+
+    textoCodificado.addEventListener("keypress", function (e) {
+        var keyCode = (e.keyCode ? e.keyCode : e.which);
+
+        if (keyCode > 47 && keyCode < 58) {
+            e.preventDefault();
+
+        } else if (keyCode > 191 && keyCode <= 255) {
+            e.preventDefault();
+        } else if (keyCode > 64 && keyCode <= 91) {
+            e.preventDefault();
+        }
+
+    });
+
+    decode(textoCoded.value);
 }
 
 function code(a) {
