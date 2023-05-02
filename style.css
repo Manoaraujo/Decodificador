@@ -1,10 +1,186 @@
 body {
-    background: #dfd6d6;
+    font-family: Bruno Ace;
+    color: rgb(26, 74, 106);
+    background: linear-gradient(90deg, #3d6b8a 15%, #8dacbd);
 }
 
+h2 {
+
+    text-align: justify;
+    font-size: 2em;
+    margin: 15px;
+
+}
+
+.caixaTexto {
+    height: 65%;
+    margin: 0 0 0 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.caixaNaoCodificada {
+
+    color: rgb(157, 183, 200);
+    font-size: 2em;
+    font-weight: bold;
+    resize: none;
+    padding: 3em 2em;
+    text-align: center;
+    margin: 20px 10px 0;
+    width: 60%;
+    height: 250px;
+    border-radius: 30px 15px;
+    border: 0;
+    background: linear-gradient(90deg, #3d6b8a 15%, #7caac4);
+    outline: none;
+
+}
+
+
+.caixaNaoCodificada:hover {
+
+    box-shadow: 5px 5px 15px #6a8796;
+
+
+}
+
+.caixaCodificada {
+    color: rgb(28, 92, 134);
+    margin: 0 15px;
+    font-size: 2em;
+    padding: 1em;
+    font-weight: bold;
+    resize: none;
+    text-align: center;
+    width: 30%;
+    height: 400px;
+    border-radius: 15px 30px;
+    border: 0;
+    outline: none;
+    background: #e8ecee;
+    opacity: 75%;
+    /* box-shadow: 5px 5px 15px #98b7c6 */
+}
+
+textarea::placeholder {
+    width: 90%;
+    position: absolute;
+    padding: 20% 2%;
+}
+
+.vector {
+    margin: 0 5px 0 0;
+}
+
+.aviso {
+    margin: 5px;
+    font-size: small;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+.botoes {
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 3px;
+
+
+}
+
+
+#botaoCode,
+#botaoDecode {
+    color: #3d6b8a;
+    font-family: Bruno Ace;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    opacity: 75%;
+    margin: 0 10px;
+    transform: scale(1);
+    transition: 0.8s;
+
+}
+
+
+#botaoCode:hover {
+    background-color: #0a446a;
+    color:#9bbfd4 ;
+    transform: scale(1.1);
+    transition: 0.7s;
+
+}
+
+#botaoDecode:hover {
+    background-color: #0a446a;
+    color:#9bbfd4 ;
+    transform: scale(1.1);
+    transition: 0.7s;
+
+}
+
+
+#botaoCopy {
+    background-color: #0a446a;
+    color:#9bbfd4 ;
+    font-family: Bruno Ace;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    opacity: 75%;
+    margin: 0 10px;
+    transform: scale(1);
+    transition: 0.8s;
+   
+
+}
+
+#botaoCopy:hover {
+    background-color: #cbd5dc;
+    color: #3d6b8a;
+    transform: scale(1.1);
+    transition: 0.7s;
+    opacity: 100%;
+
+}
+
+
+
 footer {
-    width: 100%;
-    margin: 0 0;
-    bottom: 0;
-    background: #4a4242;
+    text-align: center;
+    background: url("imagens/binario.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 0;
+    height: 80px
+}
+
+.imagem-rodape {
+    display: inline;
+    height: 80px;
+
+}
+
+footer li {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.copyright {
+
+    font-family:Arial, Helvetica, sans-serif;
+    color: #cbd5dc;
+    font-size: 13px;
+    margin-top: 10px;
 }

@@ -46,7 +46,7 @@ function code(a) {
     document.querySelector(".caixaCodificada").value = codigo
     document.querySelector(".caixaNaoCodificada").value = ""
 
-    document.querySelector(".caixaNaoCodificada").style.visibility = "hidden" // esconder textArea
+    // document.querySelector(".caixaNaoCodificada").style.visibility = "hidden" // esconder textArea
 
 
 }
@@ -60,7 +60,7 @@ function decode(b) {
     document.querySelector(".caixaNaoCodificada").value = codificado
     document.querySelector(".caixaCodificada").value = ""
 
-    document.querySelector(".caixaCodificada").style.visibility = "hidden" // esconder textArea
+    // document.querySelector(".caixaCodificada").style.visibility = "hidden" // esconder textArea
 
 }
 
