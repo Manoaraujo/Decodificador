@@ -65,26 +65,51 @@ function decode(b) {
 }
 
 
-// codigo para permitir somente letras minusculas
 
-// textoDigitado = document.querySelector("areaTexto");
+// Permitir somente letras minusculas
 
-// texto.addEventListener("keypress", function (e) {
 
-//     var keyCode = (e.keyCode ? e.keyCode : e.which);
+document.addEventListener("keypress", function (e) {
 
-//     if (keyCode > 47 && keyCode < 58) {   //numeros
-//         e.preventDefault();
+    var keyCode = (e.keyCode ? e.keyCode : e.which);
 
-//     } else if (keyCode > 191 && keyCode <= 255) { //letras acentudas
-//         e.preventDefault();
+    if (keyCode > 47 && keyCode < 58) {   //numeros
+        e.preventDefault();
 
-//     } else if (keyCode > 64 && keyCode <= 91) { // letras maiusculas
-//         e.preventDefault();
-//     }
+    } else if (keyCode > 191 && keyCode <= 255) { //letras acentudas
+        e.preventDefault();
 
-// });
+    } else if (keyCode > 64 && keyCode <= 91) { // letras maiusculas
+        e.preventDefault();
+    }
+});
 
+//----------------------------------------------------------------
+
+
+// Botão copiar
+
+let botaoCopiar = document.querySelector('#botaoCopy');
+
+botaoCopiar.addEventListener('click', function () {
+
+    let textArea = document.querySelector(".caixaCodificada");
+
+    textArea.select();
+    document.execCommand('copy');
+
+});
+
+botaoCopiar.addEventListener('click', function () {
+
+    let textArea = document.querySelector(".caixaNaoCodificada");
+
+    textArea.select();
+    document.execCommand('copy');
+
+});
+
+//------------------------------------------------------------------------
 
 botaoCodificar.onclick = ativaCodificar;
 botaoDecodificar.onclick = ativaDecodificar;
