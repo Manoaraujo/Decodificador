@@ -2,116 +2,90 @@
 let botaoCodificar = document.getElementById('botaoCode')
 let botaoDecodificar = document.getElementById('botaoDecode')
 
+
 function codificar(codigo) {
 
-    let letraE = codigo.replace(/e/gi, "enter")
-    let letraI = letraE.replace(/i/gi, "imes")
-    let letraA = letraI.replace(/a/gi, "ai")
-    let letraO = letraA.replace(/o/gi, "ober")
-    return codificado = letraO.replace(/u/gi, "ufat")
+    codigo = codigo.replace(/e/gi, "enter")
+    codigo = codigo.replace(/i/gi, "imes")
+    codigo = codigo.replace(/a/gi, "ai")
+    codigo = codigo.replace(/o/gi, "ober")
+    return codigo = codigo.replace(/u/gi, "ufat")
 
 }
 
 function decodificar(codificado) {
 
-    let cifraE = codificado.replace(/enter/gi, "e")
-    let cifraI = cifraE.replace(/imes/gi, "i")
-    let cifraA = cifraI.replace(/ai/gi, "a")
-    let cifraO = cifraA.replace(/ober/gi, "o")
-    return decodificado = cifraO.replace(/ufat/gi, "u")
+    codificado = codificado.replace(/enter/gi, "e")
+    codificado = codificado.replace(/imes/gi, "i")
+    codificado = codificado.replace(/ai/gi, "a")
+    codificado = codificado.replace(/ober/gi, "o")
+    return codificado = codificado.replace(/ufat/gi, "u")
 
 }
 
-function ativaCode() {
+function ativaCodificar() {
 
-    textoDigitado = document.getElementById("texto");
+    textoDigitado = document.querySelector(".caixaNaoCodificada");
 
     code(textoDigitado.value);
 }
 
-function ativaDecode() {
+function ativaDecodificar() {
 
-    textoCoded = document.getElementById("textoCodificado");
+    textoDigitado = document.querySelector(".caixaCodificada");
 
-    decode(textoCoded.value);
+    decode(textoDigitado.value);
 }
 
 function code(a) {
 
-    codificado = codificar(a)
-    document.getElementById("textoCodificado").style.visibility = "initial"
-    document.getElementById("botaoDecode").style.visibility = "initial"
+    codigo = codificar(a)
+    document.querySelector(".caixaCodificada").style.visibility = "initial"
 
-    document.getElementById("textoCodificado").value = codificado
-    document.getElementById("texto").value = ""
 
-    document.getElementById("texto").style.visibility = "hidden" // esconder textArea
-    // document.getElementById("botaoCode").style.visibility = "hidden" 
+    document.querySelector(".caixaCodificada").value = codigo
+    document.querySelector(".caixaNaoCodificada").value = ""
+
+    document.querySelector(".caixaNaoCodificada").style.visibility = "hidden" // esconder textArea
+
 
 }
 
 function decode(b) {
 
-    decodificado = decodificar(b)
-    document.getElementById("texto").style.visibility = "initial"
+    codificado = decodificar(b)
+    document.querySelector(".caixaNaoCodificada").style.visibility = "initial"
     document.getElementById("botaoCode").style.visibility = "initial"
 
-    document.getElementById("texto").value = decodificado
-    document.getElementById("textoCodificado").value = ""
+    document.querySelector(".caixaNaoCodificada").value = codificado
+    document.querySelector(".caixaCodificada").value = ""
 
-    document.getElementById("textoCodificado").style.visibility = "hidden" // esconder textArea
-    // document.getElementById("botaoDecode").style.visibility = "hidden" // esconder botão
+    document.querySelector(".caixaCodificada").style.visibility = "hidden" // esconder textArea
+
 }
 
 
-// cogido para permitir somente letras minusculas
+// codigo para permitir somente letras minusculas
 
-textoDigitado = document.getElementById("texto");
+// textoDigitado = document.querySelector("areaTexto");
 
-texto.addEventListener("keypress", function (e) {
+// texto.addEventListener("keypress", function (e) {
 
-    var keyCode = (e.keyCode ? e.keyCode : e.which);
+//     var keyCode = (e.keyCode ? e.keyCode : e.which);
 
-    if (keyCode > 47 && keyCode < 58) {   //numeros
-        e.preventDefault();
+//     if (keyCode > 47 && keyCode < 58) {   //numeros
+//         e.preventDefault();
 
-    } else if (keyCode > 191 && keyCode <= 255) { //letras acentudas
-        e.preventDefault();
+//     } else if (keyCode > 191 && keyCode <= 255) { //letras acentudas
+//         e.preventDefault();
 
-    } else if (keyCode > 64 && keyCode <= 91) { // letras maiusculas
-        e.preventDefault();
-    }
+//     } else if (keyCode > 64 && keyCode <= 91) { // letras maiusculas
+//         e.preventDefault();
+//     }
 
-    console.log(keyCode)
-});
-
-textoCoded = document.getElementById("textoCodificado");
-
-textoCodificado.addEventListener("keypress", function (e) {
-
-    var keyCode = (e.keyCode ? e.keyCode : e.which);
-
-    if (keyCode > 47 && keyCode < 58) {   //numeros
-        e.preventDefault();
-
-    } else if (keyCode > 191 && keyCode <= 255) { //letras acentudas
-        e.preventDefault();
-
-    } else if (keyCode > 64 && keyCode <= 91) { // letras maiusculas
-        e.preventDefault();
-    }
-
-});
-
-//--------------------------------------------------------------
-
-// document.getElementById("botaoDecode").style.visibility = "hidden"
-// document.getElementById("textoCodificado").style.visibility = "hidden"
+// });
 
 
-let codificado;
-let decodificado;
-
-botaoCodificar.onclick = ativaCode;
-botaoDecodificar.onclick = ativaDecode;
+botaoCodificar.onclick = ativaCodificar;
+botaoDecodificar.onclick = ativaDecodificar;
 
