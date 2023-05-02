@@ -97,6 +97,7 @@ botaoCopiar.addEventListener('click', function () {
 
     textArea.select();
     document.execCommand('copy');
+    alert("Texto copiado para área de transferencia")
 
 });
 
