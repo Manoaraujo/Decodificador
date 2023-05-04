@@ -112,6 +112,6 @@ botaoCopiar.addEventListener('click', function () {
 
 //------------------------------------------------------------------------
 
-botaoCodificar.onclick = ativaCodificar;
-botaoDecodificar.onclick = ativaDecodificar;
+// botaoCodificar.onclick = ativaCodificar;
+// botaoDecodificar.onclick = ativaDecodificar;
 
